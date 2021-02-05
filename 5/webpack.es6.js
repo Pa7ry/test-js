@@ -5,6 +5,7 @@ module.exports = merge(common, {
   output: {
     filename: 'sunmedia-es6.js',
   },
+  watch: true,
   module: {
     rules: [
       {

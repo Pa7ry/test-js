@@ -5,4 +5,16 @@ module.exports = merge(common, {
   output: {
     filename: 'sunmedia-es5.js',
   },
+  module: {
+    rules: [{
+      test: /\.m?js$/,
+      exclude: /(node_modules)/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env']
+        }
+      }
+    }]
+  },
 });
