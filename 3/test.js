@@ -1,4 +1,6 @@
-let promise = new Promise((resolve, reject) => {
+var Promise = require("bluebird");
+
+var promise = new Promise(function(resolve, reject) {
     setTimeout(function () {
         if (Math.round(Math.random()) === 1) {
             resolve("Success!");
@@ -9,9 +11,9 @@ let promise = new Promise((resolve, reject) => {
 });
 
 promise
-    .then((successMessage) => {
+    .then(function(successMessage) {
         console.log("Yes! " + successMessage);
     })
-    .catch((failMessage) => {
+    .catch(function(failMessage) {
         console.log("No! " + failMessage);
     });

@@ -3,7 +3,8 @@ import Event from './Event';
 
 export default class EventManagerFactory{
     static create(events, types) {
-        // implement your code here...
-        return new EventManager();
+        // Un evento con un tipo no contemplado debería ser ignorado.
+        const eventsFiltered = events.filter((event) => types.includes(event.type));
+        return new EventManager(eventsFiltered);
     }
 };

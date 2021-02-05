@@ -168,7 +168,9 @@
                 
                 <h3>My Video Demo</h3>
                 <!-- The div element for the video -->
-                <div id="sunmedia"></div>
+                <div id="sunmedia">
+
+                </div>
                 <hr>
                 
                 <p>
@@ -295,10 +297,17 @@
     </section>
     <!-- Import library here -->
     <script>
-      var libes6 = document.createElement('script');
-      libes6.async = true;
-      libes6.src = '../dist/sunmedia-es6.js';
-      document.body.appendChild(libes6)
+      function supportES6() {
+        try { 
+            Function("() => {};"); 
+            return true; 
+        }
+        catch(error) { return false; }
+      }
+      var lib = document.createElement('script');
+      lib.async = true;
+      lib.src = supportES6() ? '../dist/sunmedia-es6.js' : '../dist/sunmedia-es5.js';
+      document.body.appendChild(lib)
     </script>
     <!-- ./Import -->
 </body>

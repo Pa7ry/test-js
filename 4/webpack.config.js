@@ -1,6 +1,7 @@
 module.exports = {
     mode: 'development',
     entry: './src/app.js',
+    watch: true,
     output: {
         filename: 'bundle.js'
     },
